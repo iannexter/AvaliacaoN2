@@ -15,7 +15,6 @@ public class TaskController {
     @PostMapping
     public ResponseEntity<?> createTask(@RequestBody Task task) {
         if (task.getTitle() == null || task.getTitle().trim().isEmpty()) {
-            // Retornará Bad Request 400 se der erro
             return ResponseEntity
                     .badRequest()
                     .body("O campo 'title' não pode estar vazio.");
@@ -24,4 +23,13 @@ public class TaskController {
         return ResponseEntity.ok(createdTask);
     }
 
+    
+    @GetMapping
+    public ResponseEntity<?> getTasks(@RequestParam(value = "status", required = false) String status) {
+        if (status == null || status.isEmpty()) {
+            return ResponseEntity.ok(taskService.getAllTasks());
+        } else {
+            return ResponseEntity.ok(taskService.getTasksByStatus(status));
+        }
+    }
 }
