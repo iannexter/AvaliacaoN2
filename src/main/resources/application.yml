@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: task-manager
+
+  datasource:
+    url: jdbc:mysql://mysql:33070/taskdb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: tifull7.aprendizado
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+
+server:
+  port: 8080
