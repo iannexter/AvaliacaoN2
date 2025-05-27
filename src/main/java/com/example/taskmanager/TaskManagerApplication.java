@@ -10,3 +10,11 @@ public class TaskManagerApplication {
         SpringApplication.run(TaskManagerApplication.class, args);
     }
 }
+
+
+//para mandar dados via powersheel administrador:
+//
+//Invoke-WebRequest -Uri http://localhost:8080/tasks `
+//    -Method POST `
+//    -Headers @{ "Content-Type" = "application/json" } `
+//    -Body '{"title":"Test Task"}'

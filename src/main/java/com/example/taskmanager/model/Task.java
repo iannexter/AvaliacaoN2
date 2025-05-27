@@ -13,7 +13,11 @@ public class Task {
     private String title;
     private String status = "pending";
 
-    // Getters e Setters
+
+    public Task() {
+    }
+
+    
     public Long getId() {
         return id;
     }

@@ -7,7 +7,7 @@ services:
       MYSQL_ROOT_PASSWORD: tifull7.aprendizado
       MYSQL_DATABASE: taskdb
     ports:
-      - "3308:33070"  # host:container
+      - "3308:33070"  # host-porta de acesso mysql:container pelo docker Você está expondo a porta do container MySQL 33070 para a porta 3308 no seu host. No container, o MySQL está rodando na porta 33070 (padrão 3306 foi alterado). Você mapeou 3308 na sua máquina para a porta 33070 dentro do container.
     command: --port=33070
     volumes:
       - mysql-data:/var/lib/mysql
